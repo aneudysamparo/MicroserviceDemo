@@ -1,0 +1,26 @@
+2020-03-16 08:40:58.875 -04:00 [INF] Starting IdentityService.Host.
+2020-03-16 08:41:18.238 -04:00 [FTL] IdentityService.Host terminated unexpectedly!
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). UnableToConnect on 127.0.0.1:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 2s ago, last-write: 2s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 7s ago, v: 2.0.593.37019
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImpl(Object configuration, TextWriter log) in C:\projects\stackexchange-redis\src\StackExchange.Redis\ConnectionMultiplexer.cs:line 942
+   at StackExchange.Redis.ConnectionMultiplexer.Connect(String configuration, TextWriter log) in C:\projects\stackexchange-redis\src\StackExchange.Redis\ConnectionMultiplexer.cs:line 903
+   at IdentityService.Host.IdentityServiceHostModule.ConfigureServices(ServiceConfigurationContext context) in C:\Users\aa318894\lab\abp\samples\microservicedemo\microservices\IdentityService.Host\IdentityServiceHostModule.cs:line 80
+   at Volo.Abp.Modularity.ModuleLoader.ConfigureServices(List`1 modules, IServiceCollection services) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\Modularity\ModuleLoader.cs:line 122
+   at Volo.Abp.Modularity.ModuleLoader.LoadModules(IServiceCollection services, Type startupModuleType, PlugInSourceList plugInSources) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\Modularity\ModuleLoader.cs:line 23
+   at Volo.Abp.AbpApplicationBase.LoadModules(IServiceCollection services, AbpApplicationCreationOptions options) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\AbpApplicationBase.cs:line 80
+   at Volo.Abp.AbpApplicationBase..ctor(Type startupModuleType, IServiceCollection services, Action`1 optionsAction) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\AbpApplicationBase.cs:line 44
+   at Volo.Abp.AbpApplicationWithExternalServiceProvider..ctor(Type startupModuleType, IServiceCollection services, Action`1 optionsAction) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\AbpApplicationWithExternalServiceProvider.cs:line 13
+   at Volo.Abp.AbpApplicationFactory.Create(Type startupModuleType, IServiceCollection services, Action`1 optionsAction) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\AbpApplicationFactory.cs:line 37
+   at Volo.Abp.AbpApplicationFactory.Create[TStartupModule](IServiceCollection services, Action`1 optionsAction) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Volo\Abp\AbpApplicationFactory.cs:line 29
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionApplicationExtensions.AddApplication[TStartupModule](IServiceCollection services, Action`1 optionsAction) in C:\Users\aa318894\lab\abp\framework\src\Volo.Abp.Core\Microsoft\Extensions\DependencyInjection\ServiceCollectionApplicationExtensions.cs:line 15
+   at IdentityService.Host.Startup.ConfigureServices(IServiceCollection services) in C:\Users\aa318894\lab\abp\samples\microservicedemo\microservices\IdentityService.Host\Startup.cs:line 14
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass12_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at IdentityService.Host.Program.Main(String[] args) in C:\Users\aa318894\lab\abp\samples\microservicedemo\microservices\IdentityService.Host\Program.cs:line 41

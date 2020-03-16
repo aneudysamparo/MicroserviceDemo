@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Volo.Blogging.Domain.Shared</AssemblyName>
+    <PackageId>Volo.Blogging.Domain.Shared</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <content Remove="Volo\Blogging\Localization\Resources\*.json" />
+    <EmbeddedResource Include="Volo\Blogging\Localization\Resources\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="Volo.Abp.Validation" Version="2.2.1" />
+
+  </ItemGroup>
+
+</Project>

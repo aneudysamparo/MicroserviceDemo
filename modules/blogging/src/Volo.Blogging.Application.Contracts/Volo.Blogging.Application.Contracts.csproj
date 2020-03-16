@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Volo.Blogging.Application.Contracts</AssemblyName>
+    <PackageId>Volo.Blogging.Application.Contracts</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Volo\Blogging\Localization\Resources\Blogging\ApplicationContracts\*.json" />
+    <None Remove="Volo\Blogging\Localization\Resources\Blogging\ApplicationContracts\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volo.Blogging.Domain.Shared\Volo.Blogging.Domain.Shared.csproj" />
+    
+      <PackageReference Include="Volo.Abp.Ddd.Application" Version="2.2.1" />
+  </ItemGroup>
+</Project>
